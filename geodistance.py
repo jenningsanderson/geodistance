@@ -1,4 +1,3 @@
-#!/home/eamon/anaconda/bin/python
 import math
 
 ellipsoids = {
@@ -102,11 +101,11 @@ def distanceVincenty(lat1, long1, lat2, long2, ellipsoid='WGS-84'):
         cos_2sigma = cos_sigma - ((2 * sinU1 * sinU2) / cos_alpha_sq)
         # Identify C
         C = (f / 16.0) * cos_alpha_sq * (4.0 + f * (4.0 - 3 * cos_alpha_sq))
-	lmbdaP = lmbda
+        lmbdaP = lmbda
         # Recalculate lmbda now
         lmbda = L + ((1.0 - C) * f * sin_alpha * (sigma + C * sin_sigma * (cos_2sigma + C * cos_sigma * (-1.0 + 2 * cos_2sigma ** 2)))) 
         # If lambda is greater than pi, there is no solution
-    	if (abs(lmbda) > math.pi):
+        if (abs(lmbda) > math.pi):
             raise ValueError("No solution can be found.")
         iterLimit -= 1
 
